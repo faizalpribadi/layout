@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: "API"
+  version: "1.0.0"
+  contact:
+    name: Faizal Pribadi
+    email: faizal.pribadi@gmail.com,
+    url: https://faizalpribadi.github.io
+tags:
+  - name: Root
+    description: Root related requests
+paths:
+  /:
+    get:
+      operationId: getRoot
+      summary: Get root from the root of the API
+      tags: [ 'Root' ]
+      responses:
+        '200':
+          description: OK

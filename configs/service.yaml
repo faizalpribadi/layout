@@ -1,0 +1,28 @@
+common:
+  name: 'my-micro-service'
+  debug: false
+  env: dev
+  
+db:
+  providers:
+    mysql:
+      hosts: 'one.host.com,two.host.com'
+      name: 'service'
+      port: 3306
+      user: 'root'
+      pass: '' 
+    redis:
+      hosts: 'one.host.com,two.host.com'
+      port: 6379
+      user: 'root'
+      pass: '' 
+
+log:
+  file: '/path/log.log'
+
+http:
+  port: 8080
+  timeout: 10
+
+circuit_breaker:
+  timeout: 5
