@@ -1,6 +1,6 @@
 # LAYOUT
 
-<p align="center"><img src="images/retry.png" width="220"></p>
+<p align="center"><img src="images/layout.png" width="220"></p>
 
 ## MICRO-SERVICE-PROJECT-LAYOUT
 
