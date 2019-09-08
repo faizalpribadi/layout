@@ -1,6 +1,8 @@
 package config
 
 import (
+	"errors"
+
 	"github.com/spf13/viper"
 )
 
@@ -62,16 +64,15 @@ func NewConfiguration() Config {
 func (c *config) ReadFileConfiguration(path string) (*Configuration, error) {
 	viper.AddConfigPath(path)
 	viper.SetConfigName("service")
-	err := viper.ReadInConfig()
 
-	if err != nil {
-		return nil, err
+	if err := viper.ReadInConfig(); err != nil {
+		return nil, errors.New("[config-error] config file not found")
 	}
 
 	config := &Configuration{}
-	err = viper.Unmarshal(config)
+	err := viper.Unmarshal(config)
 	if err != nil {
-		return nil, err
+		return nil, errors.New("[error] un-marshalling config error")
 	}
 
 	return config, nil

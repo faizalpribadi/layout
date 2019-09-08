@@ -12,6 +12,7 @@ import (
 	"github.com/sirupsen/logrus"
 
 	"github.com/faizalpribadi/layout/internal/config"
+	"github.com/faizalpribadi/layout/internal/constant"
 
 	"github.com/faizalpribadi/layout/internal/domain"
 )
@@ -48,9 +49,10 @@ func (s *Server) gracefullShutdown(server *http.Server, logger *logrus.Logger, q
 }
 
 func (s *Server) Run() {
-	c, err := s.cfg.ReadFileConfiguration("./configs")
+	c, err := s.cfg.ReadFileConfiguration(constant.FileConfig)
 	if err != nil {
 		logrus.Error(err)
+		return
 	}
 
 	done := make(chan bool, 1)
