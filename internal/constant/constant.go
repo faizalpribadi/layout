@@ -5,5 +5,5 @@ const (
 )
 
 const (
-	FileConfig = ""
+	FileConfig = "configs"
 )
