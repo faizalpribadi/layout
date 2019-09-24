@@ -63,7 +63,7 @@ func NewConfiguration() Config {
 
 func (c *config) ReadFileConfiguration(path string) (*Configuration, error) {
 	viper.AddConfigPath(path)
-	viper.SetConfigName("service")
+	viper.SetConfigName("app")
 
 	if err := viper.ReadInConfig(); err != nil {
 		return nil, errors.New("[config-error] config file not found")
